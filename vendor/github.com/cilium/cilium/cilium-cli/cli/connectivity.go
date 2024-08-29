@@ -93,6 +93,7 @@ func RunE(hooks api.Hooks) func(cmd *cobra.Command, args []string) error {
 		}()
 
 		logger.Start(ctx)
+
 		defer logger.Stop()
 		return connectivity.Run(ctx, connTests, hooks)
 	}
